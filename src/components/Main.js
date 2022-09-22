@@ -5,16 +5,16 @@ function Main() {
 
   return (
     <main className='Main'>
-      <div class="main__primerParte">
+      <div className="Main-primerParte">
         <p>Our<br/>
         Perfect<br/>
         School</p>
       </div>
 
-      <Img classAditional='main__logo'/>
+      <Img classAditional='Main-logo'/>
 
-      <div class="main__down">
-        <i class="fas fa-arrow-down"></i>
+      <div className="Main-down">
+        <i className="fas fa-arrow-down"></i>
         <p>Scroll down</p>
       </div>
     </main>

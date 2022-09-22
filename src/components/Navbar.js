@@ -3,7 +3,7 @@ import Img from './Img';
 
 function Navbar({ clickMangment, active }) {
   return (
-    <div className='Navbar'>
+    <nav className='Navbar'>
       <section className='Navbar-content'>
         <Img classAditional='Navbar-logo' />
 
@@ -19,7 +19,7 @@ function Navbar({ clickMangment, active }) {
           <i className='fas fa-bars'></i>
         </div>
       </section>
-    </div>
+    </nav>
   );
 }
 
