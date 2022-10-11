@@ -1,4 +1,4 @@
-.Main {
+.Home {
     width: 100vw;
     height: 100vh;
     padding-top: 80px;
@@ -8,31 +8,31 @@
     justify-content: space-between;
     flex-direction: column;
 }
-.Main-primerParte {
+.Home-primerParte {
     color: white;
     font-size: 80px;
     padding-top: 80px;
 }
 
-.Main-primerParte > p {
+.Home-primerParte > p {
     background: #fff;
     background: linear-gradient(135deg, #5927E5, #00F6FF);
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.Main-logo {
-    width: 10px;
-    height: 10px;
+.Home-logo {
+    width: 60px;
+    height: 60px;
     border-radius: 100%;
 }
 
-.Main-logo img {
+.Home-logo img {
     width: 100%;
     height: 100%;
 }
 
-.Main-down {
+.Home-down {
     width: 200px;
     height: 100px;
     font-weight: bold;
@@ -47,6 +47,6 @@
     box-shadow: 0 0 8px 0 #00f6ff, 0 5px 0 0 #00f6ff;
 }
 
-.Main-down > i {
+.Home-down > i {
     font-size: 24px;
 }
