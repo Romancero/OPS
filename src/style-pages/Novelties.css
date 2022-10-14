@@ -1,12 +1,13 @@
 .Novelties {
-  width: 100vw;
-  height: 100vh;
-  padding-top: 80px;
-  background-color: rgba(10, 10, 10, 1);
+  min-width: 100%;
+  min-height: 100%;
+  padding-left: 80px;
+  background-color: #1c113b;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition: all .5s;
 }
 
 .Novelties-titulo {
@@ -16,4 +17,10 @@
   background: linear-gradient(135deg, #5927E5, #00F6FF);
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+@media screen and (max-width: 420px){
+  .Novelties {
+    padding-left: 0;
+  }
 }

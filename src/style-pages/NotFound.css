@@ -1,8 +1,7 @@
 .NotFound {
   width: 100vw;
   height: 100vh;
-  padding-top: 80px;
-  background-color: rgba(10, 10, 10, 1);
+  background-color: #04000e;
   display: flex;
   align-items: center;
   justify-content: center;

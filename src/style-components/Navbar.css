@@ -1,162 +1,265 @@
 .Navbar {
-  width: 100vw;
-  height: 80px;
-  background-color: transparent;
-  position: fixed;
-}
-
-.Navbar::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 100% 100% 0 0;
-  background-color: #5927E5;
-}
-
-.Navbar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 0 0 100% 100%;
-  background-color: #00f6ff;
-}
-
-.Navbar-content {
-  width: 100%;
+  width: 80px;
   height: 100%;
-  background-color: rgba(255, 255, 255, .01);
-  backdrop-filter: blur(300px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  z-index: 10;
+  background-color: #04000e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all .5s;
 }
 
 .Navbar-logo {
-    width: 50px;
-    height: 50px;
-    margin-top: 2px;
-    margin-left: 20px;
-    border-radius: 100%;
-    overflow: hidden;
+  width: 100%;
+  height: 80px;
+  padding: 10px;
 }
 
-.Navbar-logo img {
-    width: 100%;
-    height: 100%;
+.Navbar-logo a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
-.Navbar-enlaces {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.Navbar-logo-img {
+  min-width: 60px;
+  height: 100%;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.Navbar-enlaces a {
-    color: #fcfcfc;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 12px 24px;
-    transition: all .50s linear;
+.Navbar-logo-img img {
+  width: 65%;
+  height: 65%;
 }
 
-.Navbar-enlaces a:hover {
-    color: #00f6ff;
-    text-shadow: 0 0 5px white;
+.Navbar-logo-text {
+  padding-left: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: white;
+  background: linear-gradient(135deg, #5927E5, #00F6FF);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.Navbar-pages {
+  width: 100%;
+  height: calc(100% - 80px);
+  padding: 20px 0 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.Navbar-pages a {
+  width: 100%;
+  min-height: 60px;
+  color:#f8f6ff;
+  text-decoration: none;
+  padding: 0;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.Navbar-pages a i {
+  min-width: 60px;
+  height: 100%;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Navbar-pages a p {
+  padding-left: 10px;
+  font-size: 1rem;
+  color:#f8f6ff;
+}
+
+.Navbar-pages a:hover {
+  background-color: #1c113b;
+}
+
+.Navbar-pages a:hover::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-bottom-right-radius: 30px;
+  box-shadow: 11px 11px 0 10px #1c113b;
+}
+
+.Navbar-pages a:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-top-right-radius: 30px;
+  box-shadow: 11px -11px 0 10px #1c113b;
 }
 
 .Navbar-icon {
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-    z-index: 100;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  position: fixed;
+  top: 15px;
+  left: 100px;
+  transition: all .5s;
 }
 
-.Navbar-icon:hover {
-    box-shadow: 0px 0px 5px #00f6ff, 0px 0px 5px #00f6ff inset, 0px 0px 12px 5px #5927E5 inset;
+.Navbar-icon::before {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: #f8f6ff;
+  transform: translateY(-10px);
+  box-shadow: 0 10px #f8f6ff;
+  transition: .5s;
 }
 
-.Navbar-icon > i {
-    color: #00f6ff;
-    font-size: 24px;
+.Navbar-icon::after {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: #f8f6ff;
+  transform: translateY(10px);
+  transition: .5s;
+}
+
+.Navbar--open {
+  width: 240px;
+}
+
+.Navbar--open ~ .Home {
+  padding-left: 240px;
+  transition: all .5s;
+}
+
+.Navbar--open ~ .Schools {
+  padding-left: 240px;
+  transition: all .5s;
+}
+
+.Navbar--open ~ .Events {
+  padding-left: 240px;
+  transition: all .5s;
+}
+
+.Navbar--open ~ .Novelties {
+  padding-left: 240px;
+  transition: all .5s;
+}
+
+.Navbar--open ~ .Contact {
+  padding-left: 240px;
+  transition: all .5s;
+}
+
+.Navbar-icon--open {
+  left: 260px;
+}
+
+.Navbar-icon--open::before {
+  transform: translateY(0) rotate(45deg);
+  box-shadow: 0 0 #f8f6ff;
+}
+
+.Navbar-icon--open::after {
+  transform: rotate(-45deg);
+}
+
+.Navbar-pages--open {
+  background-color: #1c113b;
+}
+
+.Navbar-pages--open::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-bottom-right-radius: 30px;
+  box-shadow: 11px 11px 0 10px #1c113b;
+}
+
+.Navbar-pages--open::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-top-right-radius: 30px;
+  box-shadow: 11px -11px 0 10px #1c113b;
 }
 
 @media screen and (max-width: 420px){
-  .Navbar::after
-  {
-      width: 10px;
-      height: 10px;
+  .Navbar {
+    width: 0;
   }
 
-  .Navbar::before
-  {
-      width: 10px;
-      height: 10px;
+  .Navbar-icon {
+    left: 20px;
   }
 
-  .Navbar-content
-  {
-      backdrop-filter: blur(60px);
+  .Navbar--open {
+    width: 100%;
   }
 
-  .Navbar-enlaces{
-      display: flex;
-      top: -100vh;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      position: absolute;
-      background-color: rgba(10, 10, 10, .99);
-      align-items: center;
-      justify-content: space-evenly;
-      flex-direction: column;
-      transition: top .50s linear;
+  .Navbar--open ~ .Home {
+    padding-left: 0;
   }
 
-  .Navbar-enlaces--open
-  {
-      top: 0;
+  .Navbar--open ~ .Schools {
+    padding-left: 0;
   }
 
-  .Navbar-enlaces > a
-  {
-      font-size: 24px;
-      position: relative;
+  .Navbar--open ~ .Events {
+    padding-left: 0;
   }
 
-  .Navbar-enlaces > a:hover::after
-  {
-      content: '>';
-      color: #5927E5;
-      text-shadow: -12px 0 0 #834AFF;
-      position: absolute;
-      top: 0;
-      left: -24px;
+  .Navbar--open ~ .Novelties {
+    padding-left: 0;
   }
 
-  .Navbar-enlaces > a:hover::before
-  {
-      content: '<';
-      color: #5927E5;
-      text-shadow: 12px 0 0 #834AFF;
-      position: absolute;
-      top: 0;
-      right: -24px;
+  .Navbar--open ~ .Contact {
+    padding-left: 0;
   }
 
-  .Navbar-icon
-  {
-      display: flex;
+  .Navbar-icon--open {
+    left: calc(100% - 70px);
   }
 }
