@@ -2,26 +2,28 @@ import '../style-components/Layout.css';
 
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
-import { useState } from 'react';
+import useDarkMode from '../custom-hooks/use-dark-mode';
+import useLocalStorage from '../custom-hooks/use-local-storage';
 
 const Layout = () => {
-  let [darkmode, setDarkmode] = useState(localStorage.getItem('dark-mode') !== null ? localStorage.getItem('dark-mode') : 'light');
-  if (localStorage.getItem('dark-mode') === null) {
-    localStorage.setItem('dark-mode', 'light');
-    console.log(localStorage.getItem('dark-mode'));
-  } else {
-    localStorage.setItem('dark-mode', darkmode);
-    console.log(localStorage.getItem('dark-mode'));
-  }
+  const [darkmode, setDarkmode] = useDarkMode();
+  const [clicks, setClicks] = useLocalStorage('clicks', 0);
 
-  const activeDarkmode = () => {
-    setDarkmode(darkmode === 'dark'? 'light' : 'dark');
+  window.matchMedia('(prefers-color-scheme: dark)').onchange = () => {
+    setDarkmode(window.matchMedia('(prefers-color-scheme: dark)').matches);
   };
 
+  /*useEffect(
+    () => {
+      setDarkmode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+    },
+    [useMedia(['(prefers-color-scheme: dark)'], [true], false)]
+  );*/
+
   return (
-    <div className={`Layout Layout-${darkmode}mode`}>
+    <div className={`Layout`}>
       <Navbar />
-      <button className='Layout-button' onClick={activeDarkmode} >{`Activar ${darkmode === 'dark'? 'Light' : 'Dark'}-Mode`}</button>
+      <button className='Layout-button' onClick={() => {setDarkmode(!darkmode); setClicks(clicks + 1)}} >{`Activar ${darkmode ? 'Light' : 'Dark'}-Mode ${clicks}`}</button>
       <Outlet />
     </div>
   );

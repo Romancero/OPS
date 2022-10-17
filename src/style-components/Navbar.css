@@ -5,6 +5,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
   transition: all .5s;
 }
 
@@ -181,7 +182,7 @@
 }
 
 .Navbar--open ~ .Contact {
-  padding-left: 240px;
+  padding-left: 320px;
   transition: all .5s;
 }
 
@@ -256,10 +257,32 @@
   }
 
   .Navbar--open ~ .Contact {
-    padding-left: 0;
+    padding: 80px 10px;
   }
 
   .Navbar-icon--open {
     left: calc(100% - 70px);
+  }
+
+  .Navbar--open .Navbar-pages--open::before{
+    width: 30px;
+    height: 30px;
+  }
+
+  .Navbar--open .Navbar-pages--open::after{
+    width: 30px;
+    height: 30px;
+  }
+
+  .Navbar-pages--open::before{
+    width: 0;
+    height: 0;
+    transition: all .5s;
+  }
+
+  .Navbar-pages--open::after{
+    width: 0;
+    height: 0;
+    transition: all .5s;
   }
 }

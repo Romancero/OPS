@@ -1,14 +1,14 @@
 import '../style-components/Navbar.css';
 
 import { useEffect, useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link,/* useNavigate,*/ useLocation } from 'react-router-dom';
 
 import pageService from '../services/pages';
 
 import Img from './Img';
 
 function Navbar() {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const location = useLocation();
   const [pages, setPages] = useState([]);
   const [dropdownNavbar, setDropdownNavbar] = useState(['', '']);
