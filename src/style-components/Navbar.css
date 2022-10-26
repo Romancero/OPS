@@ -162,22 +162,22 @@
 }
 
 .Navbar--open ~ .Home {
-  padding-left: 240px;
+  padding-left: 320px;
   transition: all .5s;
 }
 
 .Navbar--open ~ .Schools {
-  padding-left: 240px;
+  padding-left: 320px;
   transition: all .5s;
 }
 
 .Navbar--open ~ .Events {
-  padding-left: 240px;
+  padding-left: 320px;
   transition: all .5s;
 }
 
 .Navbar--open ~ .Novelties {
-  padding-left: 240px;
+  padding-left: 320px;
   transition: all .5s;
 }
 
@@ -241,19 +241,19 @@
   }
 
   .Navbar--open ~ .Home {
-    padding-left: 0;
+    padding: 80px 10px;
   }
 
   .Navbar--open ~ .Schools {
-    padding-left: 0;
+    padding: 80px 10px;
   }
 
   .Navbar--open ~ .Events {
-    padding-left: 0;
+    padding: 80px 10px;
   }
 
   .Navbar--open ~ .Novelties {
-    padding-left: 0;
+    padding: 80px 10px;
   }
 
   .Navbar--open ~ .Contact {

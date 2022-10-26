@@ -2,7 +2,6 @@
   min-width: 100%;
   min-height: 100%;
   padding: 80px 80px 80px 160px;
-  color: #f8f6ff;
   background-color: #1c113b;
   display: flex;
   align-items: flex-start;
@@ -53,6 +52,7 @@
 .Contact-text {
   min-width: 100%;
   min-height: 75px;
+  color: #f8f6ff;
   height: 25%;
   display: flex;
   flex-direction: column;
@@ -126,6 +126,7 @@
 .Contact-social-medias {
   min-width: 100%;
   min-height: 40px;
+  color: #f8f6ff;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;

@@ -19,8 +19,9 @@ function Navbar() {
       .getAll()
       .then(initialPages => {
         setPages(initialPages);
+        let loc = location.pathname.includes('/schools') ? '/schools' : location.pathname;
         setDropdownNavbarPageOpen([
-          `Navbar-pages-${initialPages.find(page => page.path === location.pathname).id}`,
+          `Navbar-pages-${initialPages.find(page => page.path === loc).id}`,
           'Navbar-pages--open'
         ]);
       });

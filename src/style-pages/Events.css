@@ -1,7 +1,7 @@
 .Events {
   min-width: 100%;
   min-height: 100%;
-  padding-left: 80px;
+  padding: 80px 80px 80px 160px;
   background-color: #1c113b;
   display: flex;
   align-items: center;
@@ -21,6 +21,6 @@
 
 @media screen and (max-width: 420px){
   .Events {
-    padding-left: 0;
+    padding: 80px 10px;
   }
 }
