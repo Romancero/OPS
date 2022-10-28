@@ -18,8 +18,8 @@ const Schools = () => {
   useEffect(() => {
     schoolService
       .getAll()
-      .then(initialPages => {
-        setSchools(initialPages);
+      .then(initialSchools => {
+        setSchools(initialSchools);
       });
   }, [location]);
 

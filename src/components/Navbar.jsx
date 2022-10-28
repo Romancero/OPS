@@ -19,7 +19,18 @@ function Navbar() {
       .getAll()
       .then(initialPages => {
         setPages(initialPages);
-        let loc = location.pathname.includes('/schools') ? '/schools' : location.pathname;
+
+        let loc;
+        if (location.pathname.includes('/schools')) {
+          loc = '/schools';
+        } else if (location.pathname.includes('/events')) {
+          loc = '/events';
+        } else if (location.pathname.includes('/novelties')) {
+          loc = '/novelties';
+        } else {
+          loc = location.pathname;
+        }
+
         setDropdownNavbarPageOpen([
           `Navbar-pages-${initialPages.find(page => page.path === loc).id}`,
           'Navbar-pages--open'
@@ -56,6 +67,8 @@ function Navbar() {
                     <p className='Navbar-logo-text'>OPSchool</p>
                 </Link>
               );
+            } else {
+              return false;
             }
           })
         }
