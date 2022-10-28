@@ -17,7 +17,7 @@ const NoveltieDetail = () => {
   }, [noveltieId]);
 
   return (
-    <div className='Events-detail'>
+    <div className='Novelties-detail'>
       {
         !noveltie && <strong>Loading...</strong>
       }
@@ -27,14 +27,14 @@ const NoveltieDetail = () => {
       {
         noveltie?.title && (
           <>
-            <div className='Events-detail-header'>
+            <div className='Novelties-detail-header'>
               <div>
                 <h2>{noveltie.title}</h2>
                 <p>Fecha: {noveltie.startDate} - {noveltie.finishDate}</p>
               </div>
             </div>
 
-            <div className='Events-detail-body'>
+            <div className='Novelties-detail-body'>
               <p>
                 {
                   noveltie.description
@@ -42,8 +42,8 @@ const NoveltieDetail = () => {
               </p>
             </div>
 
-            <div className='Events-detail-footer'>
-              <Link to='/events'><i className="fa-solid fa-arrow-left"></i>Back to Events</Link>
+            <div className='Novelties-detail-footer'>
+              <Link to='/novelties'><i className="fa-solid fa-arrow-left"></i>Back to Novelties</Link>
             </div>
           </>
         )
