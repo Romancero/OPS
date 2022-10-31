@@ -44,7 +44,9 @@ const NoveltieList = ({ novelties }) => {
               <p className='Novelties-card-description'>Fecha: {noveltie.startDate} - {noveltie.finishDate}</p>
               <p className='Novelties-card-description'>
                 {
-                  noveltie.description
+                  noveltie.blocks.map((block, index) => (
+                    <span key={index}>{block}</span>
+                  ))
                 }
               </p>
               <Link to={`/novelties/${noveltie.id}`} className='Novelties-card-button'>Read More</Link>
@@ -65,7 +67,9 @@ const NoveltieList = ({ novelties }) => {
               <p className='Novelties-card-description'>Fecha: {noveltie.startDate} - {noveltie.finishDate}</p>
               <p className='Novelties-card-description'>
                 {
-                  noveltie.description
+                  noveltie.blocks.map((block, index) => (
+                    <span key={index}>{block}</span>
+                  ))
                 }
               </p>
               <Link to={`/novelties/${noveltie.id}`} className='Novelties-card-button'>Read More</Link>

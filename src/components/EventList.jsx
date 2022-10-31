@@ -44,7 +44,9 @@ const EventList = ({ events }) => {
               <p className='Events-card-description'>Fecha: {event.startDate} - {event.finishDate}</p>
               <p className='Events-card-description'>
                 {
-                  event.description
+                  event.blocks.map((block, index) => (
+                    <span key={index}>{block}</span>
+                  ))
                 }
               </p>
               <Link to={`/events/${event.id}`} className='Events-card-button'>Read More</Link>
@@ -65,7 +67,9 @@ const EventList = ({ events }) => {
               <p className='Events-card-description'>Fecha: {event.startDate} - {event.finishDate}</p>
               <p className='Events-card-description'>
                 {
-                  event.description
+                  event.blocks.map((block, index) => (
+                    <span key={index}>{block}</span>
+                  ))
                 }
               </p>
               <Link to={`/events/${event.id}`} className='Events-card-button'>Read More</Link>

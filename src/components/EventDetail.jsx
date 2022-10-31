@@ -27,23 +27,61 @@ const EventDetail = () => {
       {
         event?.title && (
           <>
-            <div className='Events-detail-header'>
-              <div>
-                <h2>{event.title}</h2>
-                <p>Fecha: {event.startDate} - {event.finishDate}</p>
-              </div>
+            <div className='Novelties-detail-header'>
+              <h2>{event.title}</h2>
+              <p>Fecha de inicio: {event.startDate} </p>
+              <p>Fecha de cierre: {event.finishDate}</p>
             </div>
 
-            <div className='Events-detail-body'>
+            <div className='Novelties-detail-body'>             
               <p>
                 {
                   event.description
                 }
               </p>
-            </div>
 
-            <div className='Events-detail-footer'>
-              <Link to='/events'><i className="fa-solid fa-arrow-left"></i>Back to Events</Link>
+              <div className='Novelties-detail-body-schools'>
+                <p>Escuelas:</p>
+                <ul>
+                  {
+                    event.schools.map((school, index) => (
+                      <li key={index}>{school}</li>
+                    ))
+                  }
+                </ul>
+              </div>
+
+              <div>
+                <p>Organizacion:</p>
+                <ul>
+                  {
+                    event.organization.map((organization, index) => (
+                      <li key={index}>{organization}</li>
+                    ))
+                  }
+                </ul>
+              </div>
+
+              <div className='Novelties-detail-body-blocks'>
+                <p>Bloques del evento:</p>
+                <ul>
+                  {
+                    event.blocks.map((blocks, index) => (
+                      <li key={index}>
+                        <p>{blocks}</p>
+                        <p>
+                          {
+                            event.blocksDescription[index]
+                          }
+                        </p>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+            <div className='Novelties-detail-footer'>
+              <Link to='/novelties'><i className="fa-solid fa-arrow-left"></i>Back to Novelties</Link>
             </div>
           </>
         )

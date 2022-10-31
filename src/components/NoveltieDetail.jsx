@@ -28,20 +28,58 @@ const NoveltieDetail = () => {
         noveltie?.title && (
           <>
             <div className='Novelties-detail-header'>
-              <div>
-                <h2>{noveltie.title}</h2>
-                <p>Fecha: {noveltie.startDate} - {noveltie.finishDate}</p>
-              </div>
+              <h2>{noveltie.title}</h2>
+              <p>Fecha de inicio: {noveltie.startDate} </p>
+              <p>Fecha de cierre: {noveltie.finishDate}</p>
             </div>
 
-            <div className='Novelties-detail-body'>
+            <div className='Novelties-detail-body'>             
               <p>
                 {
                   noveltie.description
                 }
               </p>
-            </div>
 
+              <div className='Novelties-detail-body-schools'>
+                <p>Escuelas:</p>
+                <ul>
+                  {
+                    noveltie.schools.map((school, index) => (
+                      <li key={index}>{school}</li>
+                    ))
+                  }
+                </ul>
+              </div>
+
+              <div>
+                <p>Organizacion:</p>
+                <ul>
+                  {
+                    noveltie.organization.map((organization, index) => (
+                      <li key={index}>{organization}</li>
+                    ))
+                  }
+                </ul>
+              </div>
+
+              <div className='Novelties-detail-body-blocks'>
+                <p>Bloques del evento:</p>
+                <ul>
+                  {
+                    noveltie.blocks.map((blocks, index) => (
+                      <li key={index}>
+                        <p>{blocks}</p>
+                        <p>
+                          {
+                            noveltie.blocksDescription[index]
+                          }
+                        </p>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
             <div className='Novelties-detail-footer'>
               <Link to='/novelties'><i className="fa-solid fa-arrow-left"></i>Back to Novelties</Link>
             </div>
